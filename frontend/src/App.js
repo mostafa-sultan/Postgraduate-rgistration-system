@@ -11,6 +11,7 @@ import NavBar from "./components/navbar";
 import Signin from './screen/signin/signin';
 import Signup from './screen/signup/signup'; 
 import MainPage from './screen/user/admin/mainPage/mainPage';
+import FormsPage from './screen/user/visitor/form/form';
 class App extends Component {
   //   state = {
   //     products: [
@@ -83,7 +84,7 @@ class App extends Component {
             <Route path="/contact" component={Contact} />
             <Route path="/home" exact component={Home} /> */}
             {/* <Route path="/home" exact component={Home} /> */} */}
-          <Route path="/home" exact component={MainPage} />  
+          <Route path="/home" exact component={FormsPage} />  
             <Route path="/register" exact component={Signup} />
             <Route path="/login" exact component={Signin} />
             {/* <Redirect from="/" to="/home" /> */}

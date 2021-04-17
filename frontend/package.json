@@ -4,18 +4,22 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.13.0",
+    "@hookform/resolvers": "^2.4.0",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
-    "bootstrap": "^4.4.1",
+    "bootstrap": "^4.6.0",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "query-string": "6.12.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-hook-form": "^7.1.1",
+    "react-hook-form-resolvers": "0.0.1",
     "react-router-dom": "5.1.2",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.1"
+    "web-vitals": "^1.1.1",
+    "yup": "^0.32.9"
   },
   "scripts": {
     "start": "react-scripts start",
