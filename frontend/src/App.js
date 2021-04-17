@@ -8,10 +8,15 @@ import NavBar from "./components/navbar";
 // import NotFound from "./notFound";
 // import About from "./about";
 // import Contact from "./contact";
+// Admin accept requists
+import AdminMainPage from "./screen/admin/mainPage/mainPage"
+// user sed requists
+import FormsPage from "./screen/visitor/form/form"
+// signin Admin
 import Signin from './screen/signin/signin';
 import Signup from './screen/signup/signup'; 
-import MainPage from './screen/user/admin/mainPage/mainPage';
-import FormsPage from './screen/user/visitor/form/form';
+import Profile from './screen/student/profile';
+// import FormsPage from './screen/visitor/form/form';
 class App extends Component {
   //   state = {
   //     products: [
@@ -84,10 +89,12 @@ class App extends Component {
             <Route path="/contact" component={Contact} />
             <Route path="/home" exact component={Home} /> */}
             {/* <Route path="/home" exact component={Home} /> */} */}
-          <Route path="/home" exact component={FormsPage} />  
-            <Route path="/register" exact component={Signup} />
+            {/* <Route path="/home" exact component={FormsPage} />   */}
+            <Route path="/student" exact component={Profile} />  
+            <Route path="/admin" exact component={AdminMainPage} />  
+            <Route path="/register" exact component={FormsPage} />
             <Route path="/login" exact component={Signin} />
-            {/* <Redirect from="/" to="/home" /> */}
+            <Redirect from="/" to="/login" />
             {/* <Redirect from="/" to="/home" /> */}
             <Redirect to="/notfound" />
           </Switch>

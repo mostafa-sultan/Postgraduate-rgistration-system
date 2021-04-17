@@ -2,7 +2,7 @@ import React from 'react'
 import './style.css'
 import { Link, NavLink } from "react-router-dom";
 
-function MainPage() {
+function AdminMainPage() {
     return (
         <div className="container">
             <div className="row">
@@ -22,6 +22,9 @@ function MainPage() {
                         </div>
                         <ul id="myTab" className="nav nav-tabs flex-column border-0 pt-4 pl-4 pb-4">
                             <li className="nav-item"><a id="payments-tab" className="nav-link active" href="#a" data-toggle="tab"> Subjects</a></li>
+                            <li className="nav-item"><a id="payments-tab" className="nav-link  " href="#a" data-toggle="tab"> Subjects</a></li>
+                            <li className="nav-item"><a id="payments-tab" className="nav-link  " href="#a" data-toggle="tab"> Subjects</a></li>
+                            <li className="nav-item"><a id="payments-tab" className="nav-link  " href="#a" data-toggle="tab"> Subjects</a></li>
                         </ul>
                     </div>
                 </div>
@@ -37,7 +40,11 @@ function MainPage() {
                                             <div className="card-body">
                                                 <h5 className="card-title">Card title</h5>
                                                 <p className="card-text">  up the bulk of the card's content.</p>
-                                                <a href="/#" className="btn btn-info">Go somewhere</a>
+                                                <div className="row">
+                                                    <a href="/#" className="btn btn-success col-6">accipt</a>
+                                                    <a href="/#" className="btn btn-warning col-6">reject</a>
+                                                </div>
+
                                             </div>
                                         </div>
 
@@ -48,7 +55,11 @@ function MainPage() {
                                             <div className="card-body">
                                                 <h5 className="card-title">Card title</h5>
                                                 <p className="card-text">  up the bulk of the card's content.</p>
-                                                <a href="/#" className="btn btn-info">Go somewhere</a>
+                                                <div className="row">
+                                                    <a href="/#" className="btn btn-success col-6">accipt</a>
+                                                    <a href="/#" className="btn btn-warning col-6">reject</a>
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -61,7 +72,11 @@ function MainPage() {
                                             <div className="card-body">
                                                 <h5 className="card-title">Card title</h5>
                                                 <p className="card-text">  up the bulk of the card's content.</p>
-                                                <a href="/#" className="btn btn-info">Go somewhere</a>
+                                                <div className="row">
+                                                    <a href="/#" className="btn btn-success col-6">accipt</a>
+                                                    <a href="/#" className="btn btn-warning col-6">reject</a>
+                                                </div>
+
                                             </div>
                                         </div>
 
@@ -72,35 +87,16 @@ function MainPage() {
                                             <div className="card-body">
                                                 <h5 className="card-title">Card title</h5>
                                                 <p className="card-text">  up the bulk of the card's content.</p>
-                                                <a href="/#" className="btn btn-info">Go somewhere</a>
+                                                <div className="row">
+                                                    <a href="/#" className="btn btn-success col-6">accipt</a>
+                                                    <a href="/#" className="btn btn-warning col-6">reject</a>
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div className="row pt-2 pb-2">
-                                    <div className="col-md-6">
-                                        <div className="card" style={{ width: '19rem' }}>
-                                            <img alt="sub" className="card-img-top" src="https://www.bootdey.com/img/Content/avatar/avatar1.png" />
-                                            <div className="card-body">
-                                                <h5 className="card-title">Card title</h5>
-                                                <p className="card-text">  up the bulk of the card's content.</p>
-                                                <a href="/#" className="btn btn-info">Go somewhere</a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div className="col-md-6">
-                                        <div className="card" style={{ width: '19rem' }}>
-                                            <img alt="sub" className="card-img-top" src="https://www.bootdey.com/img/Content/avatar/avatar1.png" />
-                                            <div className="card-body">
-                                                <h5 className="card-title">Card title</h5>
-                                                <p className="card-text">  up the bulk of the card's content.</p>
-                                                <a href="/#" className="btn btn-info">Go somewhere</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> 
+ 
                             </div>
                         </div>
                     </div>
@@ -111,4 +107,4 @@ function MainPage() {
     )
 }
 
-export default MainPage
+export default AdminMainPage

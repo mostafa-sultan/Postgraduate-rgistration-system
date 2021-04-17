@@ -79,6 +79,9 @@ class FormsPage extends Component {
   render() {
     return (
       <div>
+          <center><h1>REGISTERING FORM</h1></center>
+          <br /> 
+
         <form
           className="needs-validation"
           onSubmit={this.contactSubmit.bind(this)}
