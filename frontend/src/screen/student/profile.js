@@ -50,6 +50,21 @@ function Profile() {
                     </div>
                 </div>
             </div>
+            <form className="">
+            <div className="form-row">
+            <div className="col-md-3 mb-3">
+              <label htmlFor="validationTooltip05">document</label>
+              <input
+                type="file"
+                className="form-control"
+                id="document"
+                placeholder="documents" 
+                required
+              />
+              <div className="invalid-tooltip">Please provide a valid zip.</div>
+            </div>
+          </div>
+            </form>
 <center><h1>FILES</h1></center>
             <table className="table table-striped">
                 <thead>

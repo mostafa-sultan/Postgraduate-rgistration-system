@@ -21,16 +21,16 @@ function Signin() {
                     <form>
                       <div className="form-group"><label htmlFor="exampleInputEmail1">Email address</label> <input id="exampleInputEmail1" className="form-control" type="email" /></div>
                       <div className="form-group mb-5"><label htmlFor="exampleInputPassword1">Password</label> <input id="exampleInputPassword1" className="form-control" type="password" /></div>
-                      <button className="btn btn-secondary" type="submit">Login</button> <a className="forgot-link float-right text-primary" href="#l">Forgot password?</a></form></div>
+                      <button className="btn btn-secondary" type="submit">Login</button> </form></div>
                 </div>
                 <div className="col-lg-6 d-none d-lg-inline-block">
                   <div className="account-block rounded-right">
                     <div className="overlay rounded-right">&nbsp;</div>
-                    <div className="account-testimonial">
+                    {/* <div className="account-testimonial">
                       <h4 className="text-theme mb-4">This beautiful theme yours!</h4>
                       <p className="lead text-theme">"Best investment i made for a long time. Can only recommend it for other users."</p>
                       <p>- Admin User</p>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
