@@ -1,63 +1,15 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 
-import NavBar from "./components/navbar";
-// import ShoppingCart from "./shoppingCart";
-// import Home from "./home";
-// import ProductDetails from "./productDetails";
-// import NotFound from "./notFound";
-// import About from "./about";
-// import Contact from "./contact";
+import NavBar from "./components/navbar"; 
 // Admin accept requists
-import AdminMainPage from "./screen/admin/mainPage/mainPage"
-// user sed requists
-import FormsPage from "./screen/visitor/form/form"
+import AdminMainPage from "./screen/admin/mainPage" 
 // signin Admin
 import Signin from './screen/signin/signin';
-import Signup from './screen/signup/signup'; 
-import Profile from './screen/student/profile';
-// import FormsPage from './screen/visitor/form/form';
+import registrationForm from './screen/registrationForm/registrationForm'; 
+import Profile from './screen/student/profile'; 
 class App extends Component {
-  //   state = {
-  //     products: [
-  //       { id: 1, name: "Burger", count: 0 },
-  //       { id: 2, name: "Fries", count: 0 },
-  //       { id: 3, name: "Cola", count: 0 },
-  //     ],
-  //   };
-
-  //   handleReset = () => {
-  //     //Clone
-  //     let products = [...this.state.products];
-  //     //Edit
-  //     products = products.map((p) => {
-  //       p.count = 0;
-  //       return p;
-  //     });
-  //     //Set state
-  //     this.setState({ products });
-  //   };
-
-  //   IncrementHandler = (product) => {
-  //     //Clone
-  //     const products = [...this.state.products];
-  //     const index = products.indexOf(product);
-  //     products[index] = { ...products[index] };
-  //     //Edit
-  //     products[index].count++;
-  //     //Set State
-  //     this.setState({ products });
-  //   };
-
-  //   handleDelete = (product) => {
-  //     //Clone
-  //     const products = [...this.state.products];
-  //     const index = products.indexOf(product);
-  //     //Edit
-  //     products.splice(index, 1);
-  //     //Set State
-  //     this.setState({ products });
-  //   };
+ 
 
   render() {
     return (
@@ -92,7 +44,7 @@ class App extends Component {
             {/* <Route path="/home" exact component={FormsPage} />   */}
             <Route path="/student" exact component={Profile} />  
             <Route path="/admin" exact component={AdminMainPage} />  
-            <Route path="/register" exact component={FormsPage} />
+            <Route path="/register" exact component={registrationForm} />
             <Route path="/login" exact component={Signin} />
             <Redirect from="/" to="/login" />
             {/* <Redirect from="/" to="/home" /> */}

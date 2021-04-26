@@ -25,12 +25,7 @@ function Signin() {
                 </div>
                 <div className="col-lg-6 d-none d-lg-inline-block">
                   <div className="account-block rounded-right">
-                    <div className="overlay rounded-right">&nbsp;</div>
-                    {/* <div className="account-testimonial">
-                      <h4 className="text-theme mb-4">This beautiful theme yours!</h4>
-                      <p className="lead text-theme">"Best investment i made for a long time. Can only recommend it for other users."</p>
-                      <p>- Admin User</p>
-                    </div> */}
+                    <div className="overlay rounded-right">&nbsp;</div> 
                   </div>
                 </div>
               </div>
