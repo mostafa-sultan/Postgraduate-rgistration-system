@@ -17,7 +17,7 @@ function Signin() {
                       <h3 className="h4 font-weight-bold text-theme">Login</h3>
                     </div>
                     <h6 className="h5 mb-0">Welcome back!</h6>
-                    <p className="text-muted mt-2 mb-5">Enter your email address and password to access admin panel.</p>
+                    {/* <p className="text-muted mt-2 mb-5">Enter your email address and password to access admin panel.</p> */}
                     <form>
                       <div className="form-group"><label htmlFor="exampleInputEmail1">Email address</label> <input id="exampleInputEmail1" className="form-control" type="email" /></div>
                       <div className="form-group mb-5"><label htmlFor="exampleInputPassword1">Password</label> <input id="exampleInputPassword1" className="form-control" type="password" /></div>

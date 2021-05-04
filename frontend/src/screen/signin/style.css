@@ -1,6 +1,6 @@
 .account-block {
     padding: 0;
-    background-image: url(https://image.shutterstock.com/image-photo/multiethnic-group-students-stdying-together-260nw-1048526521.jpg);
+    background-image: url(https://cdn1.vectorstock.com/i/1000x1000/19/65/teenager-student-vector-20071965.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
@@ -15,7 +15,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    /* background-color: rgba(0, 0, 0, 0.4); */
 }
 .account-block .account-testimonial {
     text-align: center;

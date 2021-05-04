@@ -12,37 +12,29 @@ function Profile() {
                                 <table className="table table-user-information">
                                     <tbody>
                                         <tr>
-                                            <td><strong> Identificacion </strong></td>
+                                            <td><strong> Id Numper </strong></td>
                                             <td className="text-primary">123456789</td>
                                         </tr>
                                         <tr>
                                             <td><strong> Name </strong></td>
-                                            <td className="text-primary">Bootdey</td>
+                                            <td className="text-primary">most</td>
                                         </tr>
                                         <tr>
                                             <td><strong> Lastname </strong></td>
-                                            <td className="text-primary">Bootstrap</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong> Username </strong></td>
-                                            <td className="text-primary">bootnipets</td>
+                                            <td className="text-primary">team</td>
                                         </tr>
                                         <tr>
                                             <td><strong> Role </strong></td>
-                                            <td className="text-primary">Admin</td>
+                                            <td className="text-primary">Ms Student</td>
                                         </tr>
                                         <tr>
                                             <td><strong> Email </strong></td>
-                                            <td className="text-primary">noreply@email.com</td>
+                                            <td className="text-primary">m@email.com</td>
                                         </tr>
                                         <tr>
                                             <td><strong> created </strong></td>
                                             <td className="text-primary">20 jul 20014</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong> Modified </strong></td>
-                                            <td className="text-primary">20 jul 20014 20:00:00</td>
-                                        </tr>
+                                        </tr> 
                                     </tbody>
                                 </table>
                             </div>
@@ -53,14 +45,21 @@ function Profile() {
             <form className="">
             <div className="form-row">
             <div className="col-md-3 mb-3">
-              <label htmlFor="validationTooltip05">document</label>
+            <br/> 
+              <h2 htmlFor="validationTooltip05">upload document</h2>
               <input
                 type="file"
                 className="form-control"
                 id="document"
                 placeholder="documents" 
                 required
-              />
+              />              
+              <input
+              type="submit"
+              className="form-control"
+              id="submit"
+              placeholder="Upload"  
+            />
               <div className="invalid-tooltip">Please provide a valid zip.</div>
             </div>
           </div>
@@ -76,17 +75,17 @@ function Profile() {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Mark</td>
+                        <td>dl reacher</td>
                         <td>pdf</td>
                         <td><button className="btn btn-secondary">downlode</button>   </td>
                     </tr>
                     <tr>
-                        <td>Mark</td>
+                        <td>algorism </td>
                         <td>pdf</td>
                         <td><button className="btn btn-secondary">downlode</button>   </td>
                     </tr>
                     <tr>
-                        <td>Mark</td>
+                        <td>computer vision</td>
                         <td>pdf</td>
                         <td><button className="btn btn-secondary">downlode</button>   </td>
                     </tr> 
