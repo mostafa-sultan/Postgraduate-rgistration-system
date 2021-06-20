@@ -8,6 +8,9 @@ import AdminMainPage from "./screen/admin/mainPage"
 import Signin from './screen/signin/signin';
 import registrationForm from './screen/registrationForm/registrationForm'; 
 import Profile from './screen/student/profile'; 
+import Aplication from "./screen/admin/aplication";
+import EmpDetail from "./screen/employe/empDetail";
+import EmpAplication from "./screen/employe/empAplication";
 class App extends Component {
  
 
@@ -40,9 +43,10 @@ class App extends Component {
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/home" exact component={Home} /> */}
-            {/* <Route path="/home" exact component={Home} /> */} */}
-            {/* <Route path="/home" exact component={FormsPage} />   */}
+            <Route path="/empAplication" exact component={EmpAplication} />  
+            <Route path="/empDetail" exact component={EmpDetail} />  
             <Route path="/student" exact component={Profile} />  
+            <Route path="/aplicationDetail" exact component={Aplication} />  
             <Route path="/admin" exact component={AdminMainPage} />  
             <Route path="/register" exact component={registrationForm} />
             <Route path="/login" exact component={Signin} />

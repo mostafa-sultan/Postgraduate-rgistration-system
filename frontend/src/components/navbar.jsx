@@ -12,15 +12,17 @@ const NavBar = (props) => {
   </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/admin">
-              admin
+          
+        <li className="nav-item">
+            <NavLink className="nav-link" to="/register">
+              register
             </NavLink>
           </li>
 
+
           <li className="nav-item">
-            <NavLink className="nav-link" to="/register">
-              register
+            <NavLink className="nav-link" to="/login">
+             login
             </NavLink>
           </li>
 
@@ -30,11 +32,19 @@ const NavBar = (props) => {
             </NavLink>
           </li>
 
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/login">
-             login
+        <li className="nav-item">
+            <NavLink className="nav-link" to="/empAplication">
+              employe
             </NavLink>
           </li>
+           <li className="nav-item">
+            <NavLink className="nav-link" to="/admin">
+              admin
+            </NavLink>
+          </li>
+
+
+
         </ul>
       </div>
  

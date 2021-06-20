@@ -1,6 +1,7 @@
 
 // import React from 'react'; 
 import React, { Component } from "react";
+import axios from 'axios';
 
 class registrationForm extends Component {
   constructor(props) {
@@ -64,7 +65,15 @@ class registrationForm extends Component {
     } else {
       alert("Form has errors.");
     }
-    console.log(this.state);
+      console.log(this.state);
+      var t=this.state;
+    axios.post(`http://localhost:3000/register`,{ t })
+    .then(res => {
+      console.log(res);
+      console.log(res.data);
+    })
+    
+  
   }
 
   handleChange(field, e) {
@@ -144,11 +153,11 @@ class registrationForm extends Component {
                 required
               />
               <span style={{ color: "red" }}>{this.state.errors["password"]}</span>
-            </div> 
+            </div>
           </div>
 
           <div className="form-row">
-          <div className="col-md-3 mb-3">
+            <div className="col-md-3 mb-3">
               <label htmlFor="validationTooltip04">Type of study</label>
               <select
                 className="custom-select my-1 mr-sm-2"
@@ -157,8 +166,9 @@ class registrationForm extends Component {
                 value={this.state.fields["typeOfStudy"]}
               >
                 <option selected>Choose...</option>
-                <option value={"master"}>master</option>
-                <option value="PhD">PhD</option> 
+                <option value={"master"}>Master</option>
+                <option value="PhD">PhD</option>
+                <option value="PhD">Diploma</option>
               </select>
 
               <div className="invalid-tooltip">
@@ -186,7 +196,7 @@ class registrationForm extends Component {
             </div>
           </div>
 
-        <div className="form-row">
+          <div className="form-row">
             <div className="col-md-4 mb-3">
               <label htmlFor="validationTooltipUsername">phone</label>
               <input
@@ -200,9 +210,9 @@ class registrationForm extends Component {
                 required
               />
               <span style={{ color: "red" }}>{this.state.errors["phone"]}</span>
-            </div> 
+            </div>
           </div>
-          
+
           <div className="form-row">
             <div className="col-md-6 mb-3">
               <label htmlFor="validationTooltip03">address</label>
@@ -239,7 +249,7 @@ class registrationForm extends Component {
             </div>
           </div>
           <div className="form-row">
-  
+
             <div className="col-md-3 mb-3">
               <label htmlFor="validationTooltip04">the military situation</label>
               <select
@@ -304,11 +314,23 @@ class registrationForm extends Component {
               <div className="invalid-tooltip">Please provide a valid zip.</div>
             </div>
           </div>
-          <button className="btn btn-primary" type="submit">
+          <center>          
+            <button className="btn btn-primary" type="submit">
             Submit form
           </button>
+          </center>
+
         </form>
         ;
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     );
   }
