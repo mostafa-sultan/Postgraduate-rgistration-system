@@ -1,16 +1,20 @@
 const mongoose = require("mongoose")
 
 const schema = mongoose.Schema({
-    name: String,
+    fristname: String,
+    lastname: String,
     email: String,
-    pass: String,
-    about: String,
-    location: String,
+    password: String,
+    typeOfStudy: String,
+    religion: String,
     phone: String,
-    sex: String,
-    age: String,
-    imgurl: String,
-    state: [{ postid: String,method: String }]
+    address: String,
+    state: String,
+    military: String,
+    img: String,
+    certification: String,
+    document: String
 })
 
+ 
 module.exports = mongoose.model("temp", schema)

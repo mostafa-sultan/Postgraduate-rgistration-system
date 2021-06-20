@@ -1,88 +1,39 @@
-import React from 'react'
+import React ,{ useState, useEffect }from 'react'
+import axios from 'axios';
 import './style.css'
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom"; 
 
-var result = [{
-    "_id": {
-        "$oid": "60cf46a9d3da9d2c44fdd364"
-    },
-    "name": "handel   from req",
-    "email": "String",
-    "pass": "String",
-    "about": "String",
-    "location": "String",
-    "phone": "String",
-    "sex": "String",
-    "age": "String",
-    "imgurl": "String",
-    "state": [
-        {
-            "_id": {
-                "$oid": "60cf46a9d3da9d2c44fdd365"
-            },
-            "postid": "String",
-            "method": "String"
-        }
-    ],
-    "__v": 0
-}, {
-    "_id": {
-        "$oid": "60cf527d9b899e26e065a074"
-    },
-    "name": "handel   from req",
-    "email": "String",
-    "pass": "String",
-    "about": "String",
-    "location": "String",
-    "phone": "String",
-    "sex": "String",
-    "age": "String",
-    "imgurl": "String",
-    "state": [
-        {
-            "_id": {
-                "$oid": "60cf527d9b899e26e065a075"
-            },
-            "postid": "String",
-            "method": "String"
-        }
-    ],
-    "__v": 0
-}, {
-    "_id": {
-        "$oid": "60cf52a8745307026400cc46"
-    },
-    "name": "handel   from req",
-    "email": "String",
-    "pass": "String",
-    "about": "String",
-    "location": "String",
-    "phone": "String",
-    "sex": "String",
-    "age": "String",
-    "imgurl": "String",
-    "state": [
-        {
-            "_id": {
-                "$oid": "60cf52a8745307026400cc47"
-            },
-            "postid": "String",
-            "method": "String"
-        }
-    ],
-    "__v": 0
-}]
-fetch("http://localhost:3000/admin")
-    .then(res => res.json())
-    .then(
-        (resultt) => {
-            result = resultt
-            console.log(result)
-        });
+// var result = [ ]
+
+ 
+// fetchData();
+//  fetch("http://localhost:3000/admin")
+//     .then(res => res.json())
+//     .then(
+//         (resultt) => {
+//             result = resultt
+//             console.log(result)
+//         });
 
 
 
 function CardList() {
+  const [result,setData] = useState([]);
+
+useEffect(() => {
+//   fetch("http://localhost:3001/links/")
+//     .then(response => response.json())
+//     .then(data => setData(data));
+ 
+ axios.get(`http://localhost:3000/admin`)
+    .then(res => {
+       var data = res.data;
+        setData(data)
+      console.log(result)
+     console.log(result)
+    })
+
+});
     const dataa = result
     return (
         dataa.map((data) =>
@@ -91,9 +42,9 @@ function CardList() {
                     <div className="card" style={{ width: '19rem' }}>
                         <img alt="sub" className="card-img-top" src="https://www.bootdey.com/img/Content/avatar/avatar1.png" />
                         <div className="card-body">
-                            <h5 className="card-title"> {data.name}</h5>
-                            <NavLink className="nav-link" to="/aplicationDetail">
-                                <p className="card-text">  Show Aplication</p>
+                            <h5 className="card-title"> {data.fristname}</h5>
+                            <NavLink className="nav-link" to={"/userApp/"+data._id}>
+                                <p className="card-text"> Show Aplication</p>
                             </NavLink>
                             <div className="row">
                                 <a href="/#" className="btn btn-success col-6">accipt</a>

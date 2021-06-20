@@ -11,8 +11,7 @@ var db = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 //...................................................................................................................................
-// require
-var Post=require('../model/post');
+// require 
 var User=require('../model/user');
 var Temp=require('../model/temp');
 
@@ -38,20 +37,25 @@ var Temp=require('../model/temp');
 // registration
 // test  http://localhost:3000/register
 router.post('/register', function(req, res, next) {
-  console.log(req.body.t)
+  console.log(req.body.t.fields)
+
+  // {
+  //   fristname: 'mostafa',
+  //   lastname: 'soltan',
+  //   email: 'admin@gmail.com',
+  //   password: 'sjnhdskjh',
+  //   typeOfStudy: 'master',
+  //   religion: 'Muslim',
+  //   phone: '80348734',
+  //   address: '.,m.dsfkjjdsf',
+  //   state: 'other',
+  //   military: 'done',
+  //   img: 'C:\\fakepath\\react.pdf',
+  //   certification: 'C:\\fakepath\\FireShot Capture 071 - React cheat sheet - www.developer-cheatsheets.com.png',
+  //   document: 'C:\\fakepath\\FireShot Capture 071 - React cheat sheet - www.developer-cheatsheets.com.png'
+  // }
   var user = new Temp(
-      {
-        name: 'handel   from req',
-        email: 'String',
-        pass: 'String',
-        about: 'String',
-        location: 'String',
-        phone: 'String',
-        sex: 'String',
-        age: 'String',
-        imgurl: 'String',
-        state: [{ postid: 'String',method: 'String' }]
-      });
+    req.body.t.fields);
   user.save(function(error, temp){
     res.send(user);
   });
@@ -77,6 +81,17 @@ router.get('/login/:emaill/:pass', function(req, res, next) {
   });
 });
 
+
+
+// test http://localhost:3000/userApp/60cf6e63bdd0803e141c658c
+router.get('/userApp/:id', function(req, res, next) {
+  Temp.findOne({_id:req.params.id}, function(error, user) {
+    res.send(user);
+console.log(user)
+    });
+  });
+ 
+ 
 
 // // top 3 interest
 // //http://localhost:3000/interest
