@@ -19,9 +19,7 @@ function Aplication() {
                 console.log(userData)
             })
 
-
-
-
+ 
 
     },[]);
 
@@ -102,9 +100,9 @@ function Aplication() {
 
             <center>
                 <button className="btn-danger">Update</button>
-                <button className="btn-danger">Delete</button>
-                <button className="btn-danger">Accept</button>
-                <button className="btn-danger">Reject</button>
+                <a href="alksj"> <button className="btn-danger">Delete</button></a>
+                <a href="alksj"> <button className="btn-danger">Accept</button></a>
+                <a href="alksj"> <button className="btn-danger">Reject</button></a> 
             </center>
 
 

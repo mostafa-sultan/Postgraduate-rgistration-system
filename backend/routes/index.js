@@ -37,23 +37,7 @@ var Temp=require('../model/temp');
 // registration
 // test  http://localhost:3000/register
 router.post('/register', function(req, res, next) {
-  console.log(req.body.t.fields)
-
-  // {
-  //   fristname: 'mostafa',
-  //   lastname: 'soltan',
-  //   email: 'admin@gmail.com',
-  //   password: 'sjnhdskjh',
-  //   typeOfStudy: 'master',
-  //   religion: 'Muslim',
-  //   phone: '80348734',
-  //   address: '.,m.dsfkjjdsf',
-  //   state: 'other',
-  //   military: 'done',
-  //   img: 'C:\\fakepath\\react.pdf',
-  //   certification: 'C:\\fakepath\\FireShot Capture 071 - React cheat sheet - www.developer-cheatsheets.com.png',
-  //   document: 'C:\\fakepath\\FireShot Capture 071 - React cheat sheet - www.developer-cheatsheets.com.png'
-  // }
+  console.log(req.body.t.fields) 
   var user = new Temp(
     req.body.t.fields);
   user.save(function(error, temp){
@@ -61,6 +45,7 @@ router.post('/register', function(req, res, next) {
   });
 
 });
+
 // get posts
 // test http://localhost:3000/admin
 router.get('/admin', function(req, res, next) {
