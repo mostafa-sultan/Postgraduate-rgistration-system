@@ -44,7 +44,7 @@ class App extends Component {
             <Route path="/contact" component={Contact} />
             <Route path="/home" exact component={Home} /> */}
             <Route path="/empAplication" exact component={EmpAplication} />  
-            <Route path="/empDetail" exact component={EmpDetail} />  
+            <Route path="/empDetail/:id" exact component={EmpDetail} />  
             <Route path="/student" exact component={Profile} />  
             <Route path="/student/:id" exact component={Profile} />  
             <Route path="/userApp/:id" exact component={Aplication} />  

@@ -59,7 +59,7 @@ router.get('/login/:email/:pass', function(req, res, next) {
     if(!user){
       res.send('invalid user');
     }else {
-      res.send("http://localhost:3001/student/"+user.id); 
+      res.send("http://localhost:3001/student/"+user.email); 
     }
   });
 });
@@ -69,6 +69,14 @@ router.get('/login/:email/:pass', function(req, res, next) {
 // test http://localhost:3000/userApp/60cf6e63bdd0803e141c658c
 router.get('/userApp/:id', function(req, res, next) {
   Temp.findOne({_id:req.params.id}, function(error, user) {
+    res.send(user);
+console.log(user)
+    });
+  });
+ 
+  // test http://localhost:3000/userApp/60cf6e63bdd0803e141c658c
+router.get('/user/:email', function(req, res, next) {
+  User.findOne({email:req.params.email}, function(error, user) {
     res.send(user);
 console.log(user)
     });
@@ -93,22 +101,56 @@ router.get('/delete/:id', function(req, res, next) {
  
 
     // test http://localhost:3000/accept/60cfe5a010c917325405d277
-router.get('/accept/:id', function(req, res, next) {
-  Temp.findOne({_id:req.params.id}, function(error,temp) {
-    delete temp.__v;
-    var user = new User(temp);
-    user.save(function(error, user){
-      // console.log(error);
-      console.log(user);
-    }); 
-    console.log(temp) 
-    // res.redirect("http://localhost:3001/admin")
-    });
-
+router.get('/accept/:id', async function(req, res, next) {
+  await Temp.findOne({_id:req.params.id},async function(error,data) {
+    var neww=({fristname,lastname,email,password,typeOfStudy,religion,religion,phone,address,state,military} = data, {fristname,lastname,email,password,typeOfStudy,religion,religion,phone,address,state,military});
     Temp.findOneAndRemove({_id:req.params.id}, function(error) {
       console.log("delete")
-      res.redirect("http://localhost:3001/admin")
+      // res.redirect("http://localhost:3001/admin")
       });
+        console.log(neww) 
+  var user = new User(neww); 
+    user.save(function(error, user){
+      // console.log(error);
+      res.send(user);
+    }); 
+
+
+  });
+  // Temp.findOne({_id:req.params.id}, function(error,temp) {
+  //   // delete temp.__v;
+  //   console.log(temp) 
+  //   var user = new User(temp)
+  //   //    {
+  //   //   _id: '60d0b69b4a70d102ec384b391',
+  //   //   fristname: 'kaledjjkljlkjlk',
+  //   //   lastname: 'sophy ',
+  //   //   email: 'mostafasoltan82@gmail.com',
+  //   //   password: '111111',
+  //   //   typeOfStudy: 'master',
+  //   //   religion: 'Muslim',
+  //   //   phone: '01933882223',
+  //   //   address: 'shohada',
+  //   //   state: 'singel',
+  //   //   military: 'no',
+  //   //   img: 'C:\\fakepath\\react_step_form-master_2.zip',
+  //   //   certification: 'C:\\fakepath\\react-cheat-sheet.pdf',
+  //   //   document: 'C:\\fakepath\\infinite_scroll_react_unsplash-master.zip'
+  //   // }
+  //   // // temp
+  //   // );
+  //   user.save(function(error, user){
+  //     // console.log(error);
+  //     res.send(user);
+  //   }); 
+    
+  //   // res.redirect("http://localhost:3001/admin")
+  //   });
+
+  //   // Temp.findOneAndRemove({_id:req.params.id}, function(error) {
+  //   //   console.log("delete")
+  //   //   res.redirect("http://localhost:3001/admin")
+  //   //   });
   });
  
 

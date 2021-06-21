@@ -10,10 +10,7 @@ const schema = mongoose.Schema({
     phone: String,
     address: String,
     state: String,
-    military: String,
-    img: String,
-    certification: String,
-    document: String 
+    military: String 
 })
 
 module.exports = mongoose.model("user", schema)
