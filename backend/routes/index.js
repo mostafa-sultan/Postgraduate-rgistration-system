@@ -45,23 +45,21 @@ router.post('/register', function(req, res, next) {
   });
 
 });
-
-// get posts
+ 
 // test http://localhost:3000/admin
 router.get('/admin', function(req, res, next) {
   Temp.find({},function(error, post){
     res.json(post); 
   });
 });
-
-// login
+ 
 // test  http://localhost:3000/login/String/String
-router.get('/login/:emaill/:pass', function(req, res, next) {
-  User.findOne({email:req.params.emaill,about:req.params.pass}, function(error, user) {
+router.get('/login/:email/:pass', function(req, res, next) {
+  User.findOne({email:req.params.email,password:req.params.pass}, function(error, user) {
     if(!user){
       res.send('invalid user');
     }else {
-      res.send(user);
+      res.send("http://localhost:3001/student/"+user.id); 
     }
   });
 });
@@ -76,6 +74,42 @@ console.log(user)
     });
   });
  
+  // test http://localhost:3000/userApp/60cf6e63bdd0803e141c658c
+router.get('/user/:id', function(req, res, next) {
+  User.findOne({_id:req.params.id}, function(error, user) {
+    res.send(user);
+console.log(user)
+    });
+  });
+ 
+ 
+  // test http://localhost:3000/delete/60cf6e63bdd0803e141c658c
+router.get('/delete/:id', function(req, res, next) {
+  Temp.findOneAndRemove({_id:req.params.id}, function(error) {
+    console.log("delete")
+    res.redirect("http://localhost:3001/admin")
+    });
+  });
+ 
+
+    // test http://localhost:3000/accept/60cfe5a010c917325405d277
+router.get('/accept/:id', function(req, res, next) {
+  Temp.findOne({_id:req.params.id}, function(error,temp) {
+    delete temp.__v;
+    var user = new User(temp);
+    user.save(function(error, user){
+      // console.log(error);
+      console.log(user);
+    }); 
+    console.log(temp) 
+    // res.redirect("http://localhost:3001/admin")
+    });
+
+    Temp.findOneAndRemove({_id:req.params.id}, function(error) {
+      console.log("delete")
+      res.redirect("http://localhost:3001/admin")
+      });
+  });
  
 
 // // top 3 interest

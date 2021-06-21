@@ -100,9 +100,9 @@ function Aplication() {
 
             <center>
                 <button className="btn-danger">Update</button>
-                <a href="alksj"> <button className="btn-danger">Delete</button></a>
-                <a href="alksj"> <button className="btn-danger">Accept</button></a>
-                <a href="alksj"> <button className="btn-danger">Reject</button></a> 
+                <a href={"http://localhost:3000/delete/"+userData._id}> <button className="btn-danger">Delete</button></a>
+                <a href={"http://localhost:3000/accept/"+userData._id}> <button className="btn-danger">Accept</button></a>
+                <a href={"http://localhost:3000/delete/"+userData._id}> <button className="btn-danger">Reject</button></a> 
             </center>
 
 

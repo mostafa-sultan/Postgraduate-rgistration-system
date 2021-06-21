@@ -1,6 +1,25 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios';
+import { Link, NavLink, useParams } from "react-router-dom";
 
 function Profile() {
+    let { id } = useParams();
+    console.log(id)
+
+   const [userData, setData] = useState([]); 
+    useEffect(() => {
+        axios.get(`http://localhost:3000/user/` + id)
+            .then(res => {
+                var data = res.data;
+                setData(data)
+                console.log(data)
+                console.log(userData)
+                console.log(userData)
+            })
+
+ 
+
+    },[]);
     return (
         <div>
             <div className="container bootstrap snippets bootdey">
@@ -11,30 +30,44 @@ function Profile() {
                             <div className="table-responsive">
                                 <table className="table table-user-information">
                                     <tbody>
-                                        <tr>
+                                    <tr>
                                             <td><strong> Id Numper </strong></td>
-                                            <td className="text-primary">123456789</td>
+
+                                            <td className="text-primary">
+                                                <input type="text" className="form-control" placeholder="Username" defaultValue={userData._id} />
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td><strong> Name </strong></td>
-                                            <td className="text-primary">most</td>
+                                            <td className="text-primary">
+                                                <input type="text" className="form-control" placeholder="Username" defaultValue={userData.fristname} />
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td><strong> Lastname </strong></td>
-                                            <td className="text-primary">team</td>
+                                            <td className="text-primary">
+                                                <input type="text" className="form-control" placeholder="Username" defaultValue={userData.lastname} />
+
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td><strong> Role </strong></td>
-                                            <td className="text-primary">Ms Student</td>
+                                            <td className="text-primary">
+                                                <input type="text" className="form-control" placeholder="Username" defaultValue={userData.typeOfStudy} />
+
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td><strong> Email </strong></td>
-                                            <td className="text-primary">m@email.com</td>
+                                            <td className="text-primary">
+                                                <input type="text" className="form-control" placeholder="Username" defaultValue={userData.email} />
+
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <td><strong> created </strong></td>
-                                            <td className="text-primary">20 jul 20014</td>
-                                        </tr> 
+                                            <td><strong> military </strong></td>
+                                            <td className="text-primary">{userData.military}</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

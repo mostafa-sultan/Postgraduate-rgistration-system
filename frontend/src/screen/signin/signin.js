@@ -1,8 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './style.css'
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink,useHistory } from "react-router-dom";
+import axios from 'axios';
+// import { useHistory } from "react-router-dom";
+    
 
-function Signin() {
+function Signin(props) {
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+   let history = useHistory();
+ 
+   const handleSubmit = (evt) => {  
+    console.log(email)
+    console.log(pass)
+    evt.preventDefault();  
+    axios.get(`http://localhost:3000/login/`+email+"/"+pass)
+    .then(res => {  
+
+
+      const newWindow = window.open(res.data, '_blank', 'noopener,noreferrer')
+      if (newWindow) newWindow.opener = null
+      // history.push('/res.data')
+
+      console.log(res.data)
+    })
+  }
   return (
 
     <div id="main-wrapper" className="container">
@@ -18,14 +40,16 @@ function Signin() {
                     </div>
                     <h6 className="h5 mb-0">Welcome back!</h6>
                     {/* <p className="text-muted mt-2 mb-5">Enter your email address and password to access admin panel.</p> */}
-                    <form>
-                      <div className="form-group"><label htmlFor="exampleInputEmail1">Email address</label> <input id="exampleInputEmail1" className="form-control" type="email" /></div>
-                      <div className="form-group mb-5"><label htmlFor="exampleInputPassword1">Password</label> <input id="exampleInputPassword1" className="form-control" type="password" /></div>
-                      <button className="btn btn-secondary" type="submit">Login</button> </form></div>
+                    <form onSubmit={handleSubmit} >
+                      <div className="form-group"><label htmlFor="exampleInputEmail1">Email address</label> <input id="exampleInputEmail1" className="form-control" type="email" onChange={e => setEmail(e.target.value)} /></div>
+                      <div className="form-group mb-5"><label htmlFor="exampleInputPassword1">Password</label> <input id="exampleInputPassword1" className="form-control" type="password" onChange={e => setPass(e.target.value)}/></div>
+                      <button className="btn btn-secondary" type="submit">Login</button>
+                    </form>
+                  </div>
                 </div>
                 <div className="col-lg-6 d-none d-lg-inline-block">
                   <div className="account-block rounded-right">
-                    <div className="overlay rounded-right">&nbsp;</div> 
+                    <div className="overlay rounded-right">&nbsp;</div>
                   </div>
                 </div>
               </div>

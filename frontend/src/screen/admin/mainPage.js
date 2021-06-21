@@ -47,8 +47,8 @@ useEffect(() => {
                                 <p className="card-text"> Show Aplication</p>
                             </NavLink>
                             <div className="row">
-                                <a href="/#" className="btn btn-success col-6">accipt</a>
-                                <a href="/#" className="btn btn-warning col-6">reject</a>
+                             <a href={"http://localhost:3000/accept/"+data._id} className="btn btn-success col-6">accipt</a>
+                                <a href={"http://localhost:3000/delete/"+data._id} className="btn btn-warning col-6">reject</a>
                             </div>
                         </div>
                     </div>
